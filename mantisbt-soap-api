@@ -1,0 +1,31 @@
+<?php
+
+$username = 'USER';
+$password = 'xxxxxxxxxxxx;
+$summary = $status1;
+$uid = '1';
+$descr = 'This event has occured';
+$portal = 'User POrtal';
+$pid = '1';
+$url = 'http://www.example.com';
+
+$issue = array (
+'summary' => $summary,
+          'reporter'=>array('id'=>$uid),
+                    'description' => $descr,
+                    'project'=>array('id'=>$pid),
+                    'category'=>$portal,
+                    'custom_fields'=>array(
+                    array('field' => array('id'=>4,'name'=>'Portal'),'value'=>$portal),
+                                        array('field' => array('id'=>6,'name'=>'URL'),'value'=>$url)
+                                        array('field' => array('id'=>6,'name'=>'URL'),'value'=>$url)
+                                    )
+                    );
+
+$result = $client->mc_issue_add($username, $password, $issue);
+
+if (is_soap_fault($result)) {
+    trigger_error("SOAP Fault: (faultcode: {$result->faultcode}, faultstring: {$result->faultstring})", E_USER_ERROR);
+}
+
+?>
