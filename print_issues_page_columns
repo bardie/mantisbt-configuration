@@ -1,0 +1,26 @@
+1. Log into Administrator portal
+2. Click on Manage tab --> Manage Configuration --> Configuration Report
+3. Scroll to the bootom and create a new configuration option
+4. Enter the following:
+Username 	--> All users
+Project Name 	--> All Projects
+Configuration Option 	--> print_issues_page_columns
+Type 	--> Default
+Value  --> the code below............
+
+array (
+  0 => 'selection',
+  1 => 'edit',
+  2 => 'priority',
+  3 => 'id',
+  4 => 'description',
+  5 => 'custom_domain',
+  6 => 'last_updated',
+  7 => 'custom_ABC',
+  8 => 'custom_DEF',
+  9 => 'custom_GHI',
+  10 => 'resolution',
+)
+
+
+********* Use custom_<custom_field> for your custom fields****************** AS indicated above***********
